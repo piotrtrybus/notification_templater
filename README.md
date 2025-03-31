@@ -1,3 +1,1 @@
-Required packages:
--pandas
--openpyxl
+Required packages: pandas, openpyxl, Path
