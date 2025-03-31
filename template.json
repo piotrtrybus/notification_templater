@@ -1,0 +1,56 @@
+{
+    "message": {
+      "alert_params": {
+        "buttons": [
+          {
+            "command": "open_link_1",
+            "highlighted": true,
+            "text:mustache": "{{button_text}}"
+          }
+        ],
+        "image:mustache": "{{modal_image}}",
+        "text:mustache": "{{modal_text}}",
+        "title:mustache": "{{modal_title}}"
+      },
+      "commands": {
+        "open_alert": {
+          "command_id": "REF_ALERT"
+        },
+        "open_link_1": {
+          "arguments": {
+            "link": "{{cta_link}}"
+          },
+          "command_id": "OPEN_LINK"
+        },
+        "open_link_5": {
+          "arguments": {
+            "link": "{{cta_link}}"
+          },
+          "command_id": "OPEN_LINK"
+        }
+      },
+      "icon_type": "question",
+      "menu_balloon_params": {
+        "buttons": [
+          {
+            "command": "open_link_5",
+            "highlighted": true,
+            "text:mustache": "{{button_text}}"
+          }
+        ],
+        "hero_image:mustache": "{{tray_image}}",
+        "hero_image_position": "top",
+        "menu_actions": {
+          "activate": {
+            "command": "open_alert"
+          }
+        },
+        "overridden_icon:mustache": "https://marketing-assets.gcdn.co/p-03/wgc/icon/logo_icon_v01_48x48.png",
+        "priority": "medium",
+        "text:mustache": "{{tray_text}}",
+        "title:mustache": "{{tray_title}}"
+      },
+      "schema_version": "5.0",
+      "title_id:mustache": "union.steel"
+    }
+  }
