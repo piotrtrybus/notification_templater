@@ -4,7 +4,8 @@ import copy
 from pathlib import Path
 
 #Add translations
-file_path = "translations.xlsx"
+file_name = "EA_twitch_drops_notifications_complete"
+file_path = f"{file_name}.xlsx"
 df = pd.read_excel(file_path) 
 
 df = df.loc[:, ~df.columns.str.contains('^Unnamed')]
@@ -45,7 +46,7 @@ key_to_path = {
 
 }
 
-Path("translated_notifications").mkdir(exist_ok=True)
+Path(f"translated_notifications_{file_name}").mkdir(exist_ok=True)
 
 for lang in df.columns:
     localized_json = copy.deepcopy(base_template)
@@ -64,5 +65,5 @@ for lang in df.columns:
                 current = current[p]
             current[path[-1]] = value
 
-    with open(f'translated_notifications/notification_{lang}.json', 'w', encoding='utf-8') as f:
+    with open(f'translated_notifications_{file_name}/{file_name}_{lang}.json', 'w', encoding='utf-8') as f:
         json.dump(localized_json, f, indent=2, ensure_ascii=False)
